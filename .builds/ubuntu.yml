@@ -1,0 +1,14 @@
+image: ubuntu/lts
+
+sources:
+- https://github.com/plamm/pastebox.git
+
+packages:
+- openjdk-8-jdk
+- maven
+
+tasks:
+- build: |
+   cd *
+   git log -1
+   mvn clean install

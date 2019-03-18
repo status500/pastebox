@@ -1,13 +1,13 @@
-### Pastebox
+[![builds.sr.ht status](https://builds.sr.ht/~plamen/pastebox.svg)](https://builds.sr.ht/~plamen/pastebox?)
+## Pastebox
 
 Pastebox is Work-in-Progress web application for pasting and sharing code with syntax highlighting.
 
-### Prerequisites
+## Prerequisites
 
 To build and run the project you will need:
 
 [OpenJDK 8](https://adoptopenjdk.net/index.html "OpenJDK 8")
-
 [Apache Maven 3.6.x](https://maven.apache.org/download.cgi "Apache Maven")
 
 ## Deployment
