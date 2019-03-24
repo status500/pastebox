@@ -1,14 +1,27 @@
-image: ubuntu/lts
+image: ubuntu/18.04
 
 sources:
 - https://github.com/plamm/pastebox.git
+
+secrets:
+- 18134bc3-e4d0-4238-958c-d49d990f2eea
 
 packages:
 - openjdk-8-jdk
 - maven
 
 tasks:
+- setup: |
+   sudo update-java-alternatives -s java-1.8.0-openjdk-amd64
+   set +x
+   echo "Setting environment variables..."  
+   ~/set_env_vars.sh>/dev/null 2>&1
+   echo "Done."
+   set -x
 - build: |
-   cd *
+   cd pastebox
    git log -1
    mvn clean install
+- test_coverage: |
+   cd pastebox
+   mvn clean test org.jacoco:jacoco-maven-plugin:report org.eluder.coveralls:coveralls-maven-plugin:report
