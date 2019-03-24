@@ -1,4 +1,4 @@
-[![builds.sr.ht status](https://builds.sr.ht/~plamen/pastebox.svg)](https://builds.sr.ht/~plamen/pastebox?)
+[![builds.sr.ht status](https://builds.sr.ht/~plamen/pastebox.svg)](https://builds.sr.ht/~plamen/pastebox?) [![Coverage Status](https://coveralls.io/repos/github/status500/pastebox/badge.svg?branch=master)](https://coveralls.io/github/status500/pastebox?branch=master)
 ## Pastebox
 
 Pastebox is Work-in-Progress web application for pasting and sharing code with syntax highlighting.
@@ -7,8 +7,8 @@ Pastebox is Work-in-Progress web application for pasting and sharing code with s
 
 To build and run the project you will need:
 
-[OpenJDK 8](https://adoptopenjdk.net/index.html "OpenJDK 8")
-[Apache Maven 3.6.x](https://maven.apache.org/download.cgi "Apache Maven")
+  - [OpenJDK 8](https://adoptopenjdk.net/index.html "OpenJDK 8")
+  - [Apache Maven 3.6.x](https://maven.apache.org/download.cgi "Apache Maven")
 
 ## Deployment
 
