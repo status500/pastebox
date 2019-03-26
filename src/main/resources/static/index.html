@@ -1,32 +1,40 @@
 <!DOCTYPE HTML>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<title>PasteBox</title>
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" />
-<link href="https://fonts.googleapis.com/css?family=B612"
-	rel="stylesheet">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, maximum-scale=1">
-
-<link rel="stylesheet" href="/css/background.css" />
-<link rel="stylesheet" href="/css/style.css">
-
+    <meta charset="UTF-8">
+    <title>PasteBox</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=B612" rel="stylesheet">
+    <link rel="stylesheet" href="css/background.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 </head>
-<body>
-	<header class="container">
-		<h2 class="text-center mt-3">Hello, PasteBox!</h2>
-		<hr />
-	</header>
 
-	<div class="container">
-		<div class="form-group">
-			<label for="inputPasteContent">Paste</label>
-			<textarea class="form-control" id="inputPasteContent" rows="20"></textarea>
-		</div>
-		<button type="button"
-			class="btn btn-primary btn-lg btn-block popover-test">Submit</button>
-	</div>
+<body>
+<header class="container">
+    <h2 class="text-center mt-3">Hello, PasteBox!</h2>
+    <hr />
+</header>
+<form id="paste_form" v-on:submit.prevent="submitForm" action="">
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input v-model="title" class="form-control" name="title" type="text" minLength="1" maxLength="64" required />
+    </div>
+    <div class="form-group">
+        <label for="content">Paste content</label>
+        <textarea v-model="content" class="form-control" name="content" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Send
+    </button>
+    <br>
+    <br>
+    <p class="alert alert-warning" v-show="errorMessage.length > 0" v-html="errorMessage"></p>
+    <p class="alert alert-success" v-show="successMessage.length > 0" v-html="successMessage"></p>
+</form>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.8/vue.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.5.1/vue-resource.min.js"></script>
+<script src="js/paste.js"></script>
 </body>
+
 </html>
