@@ -3,5 +3,7 @@ package dev.peev.pastebox.service;
 import dev.peev.pastebox.domain.model.service.PasteServiceModel;
 
 public interface PasteService {
-  void save(PasteServiceModel pasteServiceModel);
+    PasteServiceModel save(final PasteServiceModel pasteServiceModel);
+    
+    PasteServiceModel findById(final String id);
 }

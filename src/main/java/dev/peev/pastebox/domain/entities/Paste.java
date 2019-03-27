@@ -1,5 +1,6 @@
 package dev.peev.pastebox.domain.entities;
 
+import java.time.LocalDateTime;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -18,4 +19,7 @@ public class Paste extends BaseEntity {
 
   @Column(name = "content", columnDefinition = "text")
   private String content;
+
+  @Column(name = "created_on", nullable = false, updatable = false)
+  private LocalDateTime createOn;
 }
