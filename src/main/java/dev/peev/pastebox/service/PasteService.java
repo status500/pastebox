@@ -1,3 +1,7 @@
 package dev.peev.pastebox.service;
 
-public interface PasteService {}
+import dev.peev.pastebox.domain.model.service.PasteServiceModel;
+
+public interface PasteService {
+  void save(PasteServiceModel pasteServiceModel);
+}
