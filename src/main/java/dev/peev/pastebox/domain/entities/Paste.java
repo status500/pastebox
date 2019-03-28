@@ -21,5 +21,5 @@ public class Paste extends BaseEntity {
   private String content;
 
   @Column(name = "created_on", nullable = false, updatable = false)
-  private LocalDateTime createOn;
+  private LocalDateTime createdOn;
 }

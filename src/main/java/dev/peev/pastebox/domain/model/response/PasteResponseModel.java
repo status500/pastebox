@@ -8,8 +8,9 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class PastesResponseModel {
-  private String title;
-  private String content;
-  private LocalDateTime createOn;
+public class PasteResponseModel {
+    private String id;
+    private String title;
+    private String content;
+    private LocalDateTime createdOn;
 }

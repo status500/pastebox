@@ -1,4 +1,4 @@
-package dev.peev.pastebox.service;
+package dev.peev.pastebox.service.interfaces;
 
 import dev.peev.pastebox.domain.model.service.PasteServiceModel;
 
