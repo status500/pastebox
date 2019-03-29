@@ -37,7 +37,7 @@ public class PasteController {
         PasteResponseModel.class);
   }
 
-  @GetMapping(path = "/api/{id}", produces = APPLICATION_JSON_UTF8_VALUE)
+  @GetMapping(path = "/raw/{id}", produces = APPLICATION_JSON_UTF8_VALUE)
   @ResponseBody
   public PasteResponseModel fetchPaste(@PathVariable(name = "id") final String id) {
     return modelMapper.map(pasteService.findById(id), PasteResponseModel.class);
