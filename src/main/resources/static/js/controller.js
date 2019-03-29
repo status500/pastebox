@@ -15,7 +15,7 @@ function paste() {
   var formContent = document.getElementById("paste-content").value
   var payload = { title: formTitle, content: formContent }
 
-  fetch("/paste", {
+  fetch("/pastes", {
     method: "POST",
     headers: {
       "Content-type": "application/json; charset=UTF-8"

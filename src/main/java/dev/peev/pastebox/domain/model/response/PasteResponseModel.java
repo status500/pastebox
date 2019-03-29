@@ -9,8 +9,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class PasteResponseModel {
-    private String id;
-    private String title;
-    private String content;
-    private LocalDateTime createdOn;
+  private String id;
+  private String title;
+  private String content;
+  private LocalDateTime createdOn;
 }
