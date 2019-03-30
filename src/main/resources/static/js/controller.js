@@ -8,11 +8,11 @@ document.addEventListener("init", function(event) {
     var title = page.data.response.title;
     page.querySelector("ons-toolbar .center").innerHTML = "<b>" + ((title.length
         == 0) ? "Untitled paste" : title) + " </b>";
-    page.querySelector(".microlight").innerHTML = page.data.response.content;
+    page.querySelector(".paste-text").innerHTML = page.data.response.content;
+    Prism.highlightAll();
     page.querySelector("#copy-button").setAttribute("data-clipboard-text",
         calculatePasteURL(page.data.response.id));
     var clipboard = new ClipboardJS("#copy-button");
-    microlight.reset();
   }
 });
 
