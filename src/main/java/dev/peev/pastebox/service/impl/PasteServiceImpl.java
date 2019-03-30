@@ -30,7 +30,7 @@ public class PasteServiceImpl implements PasteService {
     pasteServiceModel.setCreatedOn(localDateTimeService.now());
 
     return modelMapper.map(
-        pasteRepository.save(modelMapper.map(pasteServiceModel, Paste.class)),
+        pasteRepository.saveAndFlush(modelMapper.map(pasteServiceModel, Paste.class)),
         PasteServiceModel.class);
   }
 

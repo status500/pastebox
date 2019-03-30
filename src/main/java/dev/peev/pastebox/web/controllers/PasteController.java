@@ -1,5 +1,6 @@
 package dev.peev.pastebox.web.controllers;
 
+import static dev.peev.pastebox.web.controllers.constants.ViewConstants.PASTE_SHARE_VIEW;
 import static org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE;
 
 import dev.peev.pastebox.domain.model.request.PasteRequestModel;
@@ -45,7 +46,7 @@ public class PasteController {
 
   @GetMapping(path = "/{id}")
   public ModelAndView sharePaste(ModelAndView modelAndView) {
-    modelAndView.setViewName("paste-share");
+    modelAndView.setViewName(PASTE_SHARE_VIEW);
 
     return modelAndView;
   }
