@@ -12,7 +12,8 @@
 	<groupId>dev.peev</groupId>
 	<artifactId>pastebox</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>PasteBox</name>
+	<name>PasteBox Main Build</name>
+	<packaging>pom</packaging>
 	<description>Web app for source code pasting and sharing</description>
 
 	<properties>
@@ -64,14 +65,6 @@
 	<build>
 		<finalName>${project.artifactId}</finalName>
 		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<executable>true</executable>
-					<excludeDevtools>true</excludeDevtools>
-				</configuration>
-			</plugin>
 			<plugin>
 				<groupId>org.eluder.coveralls</groupId>
 				<artifactId>coveralls-maven-plugin</artifactId>
@@ -141,4 +134,8 @@
 			</plugins>
 		</pluginManagement>
 	</build>
+	<modules>
+		<module>pastebox-app</module>
+		<module>integration-tests</module>
+	</modules>
 </project>
