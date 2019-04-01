@@ -12,7 +12,8 @@
 	<groupId>dev.peev</groupId>
 	<artifactId>pastebox</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>PasteBox</name>
+	<name>PasteBox Main Build</name>
+	<packaging>pom</packaging>
 	<description>Web app for source code pasting and sharing</description>
 
 	<properties>
@@ -23,6 +24,10 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -50,19 +55,16 @@
 			<version>LATEST</version>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.modelmapper</groupId>
+			<artifactId>modelmapper</artifactId>
+			<version>2.3.2</version>
+		</dependency>
 	</dependencies>
 
 	<build>
 		<finalName>${project.artifactId}</finalName>
 		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<executable>true</executable>
-					<excludeDevtools>true</excludeDevtools>
-				</configuration>
-			</plugin>
 			<plugin>
 				<groupId>org.eluder.coveralls</groupId>
 				<artifactId>coveralls-maven-plugin</artifactId>
@@ -132,4 +134,8 @@
 			</plugins>
 		</pluginManagement>
 	</build>
+	<modules>
+		<module>pastebox-app</module>
+		<module>integration-tests</module>
+	</modules>
 </project>

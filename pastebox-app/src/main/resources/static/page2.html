@@ -1,0 +1,17 @@
+<ons-page id="page2">
+  <ons-toolbar>
+    <div class="left">
+      <ons-back-button>Back</ons-back-button>
+    </div>
+    <div class="center"></div>
+    <div class="right">
+      <ons-button id="copy-button"
+                  ripple="true"
+                  onclick="ons.notification.toast('🗐 Copied to clipboard!', { timeout: 2000, animation: 'ascend' })"
+      >🗐 Copy link
+      </ons-button>
+    </div>
+  </ons-toolbar>
+  <pre><code class="language-java line-numbers"><div class="paste-text"></div></code></pre>
+</ons-page>
+
