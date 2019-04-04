@@ -5,8 +5,14 @@ document.addEventListener("init", function(event) {
       paste();
     };
   } else if (page.id === "page2") {
-    page.querySelector("ons-toolbar .center").innerHTML = page.data.title;
-    page.querySelector("#responsediv").innerHTML = page.data.response;
+    var title = page.data.response.title;
+    page.querySelector("ons-toolbar .center").innerHTML = "<b>" + ((title.length
+        == 0) ? "Untitled paste" : title) + " </b>";
+    page.querySelector(".paste-text").innerHTML = page.data.response.content;
+    Prism.highlightAll();
+    page.querySelector("#copy-button").setAttribute("data-clipboard-text",
+        calculatePasteURL(page.data.response.id));
+    var clipboard = new ClipboardJS("#copy-button");
   }
 });
 
@@ -15,7 +21,7 @@ function paste() {
   var formContent = document.getElementById("paste-content").value
   var payload = { title: formTitle, content: formContent }
 
-  fetch("/paste", {
+  fetch("/pastes", {
     method: "POST",
     headers: {
       "Content-type": "application/json; charset=UTF-8"
@@ -26,9 +32,16 @@ function paste() {
     return response.json()
   })
 .then(json => {
-    document.querySelector("#myNavigator").pushPage("page2.html", { data: { title: "Response:", response: JSON.stringify(json) } })
+    document.querySelector("#myNavigator").pushPage("page2.html", { data: { response: json } })
   }).catch(error => {
     console.log(error),
     ons.notification.alert("Failed to submit the paste!");
 });
+}
+
+function calculatePasteURL(responseId) {
+  return window.location.protocol
+      + "//" + window.location.hostname + ":" + window.location.port + "/"
+      + "pastes" + "/"
+      + responseId;
 }
