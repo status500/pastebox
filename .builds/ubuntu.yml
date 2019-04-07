@@ -18,9 +18,14 @@ tasks:
    ~/set_env_vars.sh>/dev/null 2>&1
    echo "Done."
    set -x
+- checkout: |
+   cd pastebox
+   git fetch --all --tags
+   git checkout ${GITHUB_REF}
+   git pull
+   echo $(git log -1)
 - build: |
    cd pastebox
-   echo $(git log -1)
    mvn clean install
 - test_coverage: |
    cd pastebox
