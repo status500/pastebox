@@ -4,27 +4,30 @@
 <head>
   <title>Pastebox</title>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
-  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
-  <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
-  <script src="js/controller.js"></script>
-  <script src="js/prism.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <link href="css/onsenui.css" rel="stylesheet"/>
+  <link href="css/onsen-css-components.min.css" rel="stylesheet"/>
   <link href="css/prism.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css?family=B612+Mono" rel="stylesheet">
-  <script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>
-  <style>
+  <script src="js/lib/onsenui.min.js"></script>
+  <script src="js/controller.js"></script>
+  <script src="js/lib/prism.js"></script>
+  <script src="js/lib/clipboard.min.js"></script>
+</head>
+
+<style>
     *:not(input):not(textarea):not(select) {
       -webkit-user-select: auto;
       -moz-user-select: auto;
       -ms-user-select: auto;
       user-select: auto;
     }
-  </style>
-
-</head>
+</style>
 
 <body>
+
 <ons-navigator animation="slide" swipeable id="myNavigator" page="page1.html"></ons-navigator>
+
 </body>
 
 </html>

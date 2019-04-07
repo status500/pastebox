@@ -13,6 +13,9 @@ document.addEventListener("init", function(event) {
     page.querySelector("#copy-button").setAttribute("data-clipboard-text",
         calculatePasteURL(page.data.response.id));
     var clipboard = new ClipboardJS("#copy-button");
+  } else if (page.id === "paste") {
+    var pasteId = window.location.pathname.split("/")[2];
+    populatePasteOnPage(pasteId, page);
   }
 });
 
@@ -45,3 +48,15 @@ function calculatePasteURL(responseId) {
       + "pastes" + "/"
       + responseId;
 }
+
+function populatePasteOnPage(pasteId, page) {
+
+fetch("/pastes/raw/" + pasteId)
+      .then(response => response.json())
+      .then(json => {
+        page.querySelector("ons-toolbar .center").innerHTML = "<b>" + json.title + " </b>";
+        page.querySelector(".paste-text").innerHTML = json.content;
+        Prism.highlightAll();
+      });
+}
+
