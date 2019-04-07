@@ -1,7 +1,7 @@
 image: ubuntu/18.04
 
 sources:
-- https://github.com/plamm/pastebox.git
+- https://github.com/status500/pastebox.git
 
 secrets:
 - 18134bc3-e4d0-4238-958c-d49d990f2eea
