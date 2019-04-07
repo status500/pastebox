@@ -20,7 +20,7 @@ tasks:
    set -x
 - build: |
    cd pastebox
-   git log -1
+   echo $(git log -1)
    mvn clean install
 - test_coverage: |
    cd pastebox
