@@ -1,4 +1,5 @@
-[![builds.sr.ht status](https://builds.sr.ht/~plamen/pastebox.svg)](https://builds.sr.ht/~plamen/pastebox?) [![Coverage Status](https://coveralls.io/repos/github/status500/pastebox/badge.svg?branch=master)](https://coveralls.io/github/status500/pastebox?branch=master)
+[![Build Status](https://travis-ci.com/status500/pastebox.svg?branch=master)](https://travis-ci.com/status500/pastebox) [![Coverage Status](https://coveralls.io/repos/github/status500/pastebox/badge.svg?branch=master)](https://coveralls.io/github/status500/pastebox?branch=master)
+
 ## Pastebox
 
 Pastebox is Work-in-Progress web application for pasting and sharing code with syntax highlighting.
