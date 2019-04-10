@@ -4,4 +4,4 @@ jdk:
 before_install:
         - chmod +x mvnw
 install:
-        - mvnw test -B org.jacoco:jacoco-maven-plugin:report org.eluder.coveralls:coveralls-maven-plugin:report
+        - ./mvnw test -B org.jacoco:jacoco-maven-plugin:report org.eluder.coveralls:coveralls-maven-plugin:report
