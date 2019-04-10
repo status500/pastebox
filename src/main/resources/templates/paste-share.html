@@ -1,32 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <title>Pastebox</title>
-    <meta charset="UTF-8">
-    <link rel="stylesheet"
-          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
-    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
-    <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
-
+  <title>Pastebox</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <link th:href="@{/css/onsenui.css}" th:rel="stylesheet"/>
+  <link th:href="@{/css/onsen-css-components.min.css}" th:rel="stylesheet"/>
+  <link th:href="@{/css/prism.css}" th:rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=B612+Mono" rel="stylesheet">
+  <script th:src="@{/js/lib/onsenui.min.js}"></script>
+  <script th:src="@{/js/controller.js}" type="text/javascript"></script>
+  <script th:src="@{/js/lib/prism.js}"></script>
+  <script th:src="@{/js/lib/clipboard.min.js}"></script>
 </head>
 
+<style>
+    *:not(input):not(textarea):not(select) {
+      -webkit-user-select: auto;
+      -moz-user-select: auto;
+      -ms-user-select: auto;
+      user-select: auto;
+    }
+</style>
+
 <body>
+
 <ons-navigator animation="slide" swipeable id="myNavigator" page="paste.html"></ons-navigator>
 <template id="paste.html">
-    <ons-page id="paste">
-        <ons-toolbar>
-            <div class="left">
-                <ons-back-button>Page 1</ons-back-button>
-            </div>
-        </ons-toolbar>
-        <div id="hello"></div>
-    </ons-page>
+  <ons-page id="paste">
+    <ons-toolbar>
+      <div class="center"></div>
+    </ons-toolbar>
+    <pre><code class="language-java line-numbers"><div class="paste-text"></div></code></pre>
+  </ons-page>
 </template>
-
 
 </body>
 
