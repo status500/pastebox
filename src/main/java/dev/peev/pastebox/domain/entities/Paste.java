@@ -20,6 +20,9 @@ public class Paste extends BaseEntity {
   @Column(name = "content", columnDefinition = "text")
   private String content;
 
+  @Column(name = "syntax", columnDefinition = "text")
+  private String syntax;
+
   @Column(name = "created_on", nullable = false, updatable = false)
   private LocalDateTime createdOn;
 }

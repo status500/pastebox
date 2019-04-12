@@ -8,8 +8,40 @@
     <section style="padding: 10px">
       <input id="paste-title" type="text" class="text-input" placeholder="Title (optional)" style="display: block; width: 100%">
     </section>
+    <div align="left">
+    <section style="padding: 10px">
+      <ons-select id="choose-sel">
+        <option value="text">Syntax (optional)</option>
+        <option value="bash">Bash</option>
+        <option value="clike">C/C++</option>
+        <option value="coffeescript">CoffeeScript</option>
+        <option value="css">CSS</option>
+        <option value="docker">Docker</option>
+        <option value="go">Go</option>
+        <option value="groovy">Groovy</option>
+        <option value="ini">ini</option>
+        <option value="java">Java</option>
+        <option value="javastacktrace">Java stacktrace</option>
+        <option value="javascript">JavaScript</option>
+        <option value="json">JSON</option>
+        <option value="kotlin">Kotlin</option>
+        <option value="markup">HTML/XML</option>
+        <option value="nginx">Nginx</option>
+        <option value="php">PHP</option>
+        <option value="powershell">Powershell</option>
+        <option value="properties">properties</option>
+        <option value="python">Python</option>
+        <option value="ruby">Ruby</option>
+        <option value="scala">Scala</option>
+        <option value="sql">SQL</option>
+        <option value="toml">TOML</option>
+        <option value="typescript">TypeScript</option>
+        <option value="yaml">YAML</option>
+      </ons-select>
+    </section>
+    </div>
     <section style="padding: 0 10px 10px">
-      <textarea id="paste-content" class="textarea" placeholder="Paste here" style="width: 100%; height: 70vh;"></textarea>
+      <textarea id="paste-content" class="textarea" placeholder="Paste here" style="width: 100%; height: 60vh;"></textarea>
     </section>
     <section style="padding: 0 10px 10px">
       <ons-button id="paste-button" modifier="large" ripple="true">Submit</ons-button>
