@@ -12,5 +12,6 @@ public class PasteServiceModel {
   private String id;
   private String title;
   private String content;
+  private String syntax;
   private LocalDateTime createdOn;
 }

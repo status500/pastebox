@@ -9,6 +9,8 @@ document.addEventListener("init", function(event) {
     page.querySelector("ons-toolbar .center").innerHTML = "<b>" + ((title.length
         == 0) ? "Untitled paste" : title) + " </b>";
     page.querySelector(".paste-text").innerHTML = page.data.response.content;
+    document.getElementById("paste-syntax").classList.add("language-" + page.data.response.syntax);
+    document.getElementById("paste-syntax").classList.add("line-numbers");
     Prism.highlightAll();
     page.querySelector("#copy-button").setAttribute("data-clipboard-text",
         calculatePasteURL(page.data.response.id));
@@ -22,7 +24,8 @@ document.addEventListener("init", function(event) {
 function paste() {
   var formTitle = document.getElementById("paste-title").value
   var formContent = document.getElementById("paste-content").value
-  var payload = { title: formTitle, content: formContent }
+  var formSyntax = document.getElementById("choose-sel").value;
+  var payload = { title: formTitle, content: formContent, syntax: formSyntax }
 
   fetch("/pastes", {
     method: "POST",
@@ -56,6 +59,8 @@ fetch("/pastes/raw/" + pasteId)
       .then(json => {
         page.querySelector("ons-toolbar .center").innerHTML = "<b>" + json.title + " </b>";
         page.querySelector(".paste-text").innerHTML = json.content;
+        document.getElementById("paste-syntax").classList.add("language-" + json.syntax);
+        document.getElementById("paste-syntax").classList.add("line-numbers");
         Prism.highlightAll();
       });
 }
