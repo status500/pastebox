@@ -1,5 +1,6 @@
 package dev.peev.pastebox.service.impl;
 
+import dev.peev.pastebox.commons.exceptions.PasteNotFoundException;
 import dev.peev.pastebox.domain.entities.Paste;
 import dev.peev.pastebox.domain.model.service.PasteServiceModel;
 import dev.peev.pastebox.repository.PasteRepository;
@@ -36,6 +37,13 @@ public class PasteServiceImpl implements PasteService {
 
   @Override
   public PasteServiceModel findById(final String id) {
-    return modelMapper.map(pasteRepository.findById(id).get(), PasteServiceModel.class);
+    return modelMapper.map(
+        pasteRepository
+            .findById(id)
+            .orElseThrow(
+                () ->
+                    new PasteNotFoundException(
+                        String.format("Unable to find paste with id=%s", id))),
+        PasteServiceModel.class);
   }
 }
