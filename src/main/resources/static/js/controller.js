@@ -8,7 +8,7 @@ document.addEventListener("init", function(event) {
     var title = page.data.response.title;
     page.querySelector("ons-toolbar .center").innerHTML = "<b>" + ((title.length
         == 0) ? "Untitled paste" : title) + " </b>";
-    page.querySelector(".paste-text").innerHTML = page.data.response.content;
+    page.querySelector(".paste-text").innerHTML = escapeSpecialCharacters(page.data.response.content);
     document.getElementById("paste-syntax").classList.add("language-" + page.data.response.syntax);
     document.getElementById("paste-syntax").classList.add("line-numbers");
     Prism.highlightAll();
@@ -58,10 +58,16 @@ fetch("/pastes/raw/" + pasteId)
       .then(response => response.json())
       .then(json => {
         page.querySelector("ons-toolbar .center").innerHTML = "<b>" + json.title + " </b>";
-        page.querySelector(".paste-text").innerHTML = json.content;
+        page.querySelector(".paste-text").innerHTML = escapeSpecialCharacters(json.content);
         document.getElementById("paste-syntax").classList.add("language-" + json.syntax);
         document.getElementById("paste-syntax").classList.add("line-numbers");
         Prism.highlightAll();
       });
 }
 
+function escapeSpecialCharacters(text) {
+  return text.replace(/&/g, '&amp;')
+      .replace(/"/g, '&quot;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;');
+}
